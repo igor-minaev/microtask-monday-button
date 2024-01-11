@@ -1,26 +1,23 @@
-import React from 'react';
+import React, {MouseEvent} from 'react';
 import './App.css';
 
 function App() {
+    // const myFirstSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
+    //     console.log('Hello. Im Vasya!')
+    // }
+    // const mySecondSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
+    //     console.log('Hello. Im Ivan!')
+    // }
+
+    const onClickHandler = (name: string) => {
+        console.log(`Hello. Im ${name}!`)
+    }
+
     return (
         <div className="App">
-            <div>
-                <h3>What to learn</h3>
-                <div>
-                    <input/>
-                    <button>+</button>
-                </div>
-                <ul>
-                    <li><input type="checkbox" checked={true}/> <span>HTML&CSS</span></li>
-                    <li><input type="checkbox" checked={true}/> <span>JS</span></li>
-                    <li><input type="checkbox" checked={false}/> <span>React</span></li>
-                </ul>
-                <div>
-                    <button>All</button>
-                    <button>Active</button>
-                    <button>Completed</button>
-                </div>
-            </div>
+            {/*<button onClick={(event) => {console.log('Hello')}}>MyYouTubeChanel-1</button>*/}
+            <button onClick={()=>onClickHandler('Vasya')}>MyYouTubeChanel-1</button>
+            <button onClick={()=>onClickHandler('Ivan')}>MyYouTubeChanel-2</button>
         </div>
     );
 }
